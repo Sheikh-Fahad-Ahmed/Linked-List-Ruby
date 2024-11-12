@@ -83,6 +83,18 @@ class LinkedList
     end
     puts 'false'
   end
+
+  def find(value)
+    return 'list is empty' if head.nil?
+
+    temp = head
+    index = 0
+    until temp.value == value
+      temp = temp.next_node
+      index += 1
+    end
+    index
+  end
 end
 
 list = LinkedList.new
@@ -96,4 +108,4 @@ puts list
 list.at(1)
 
 list.contains?(2)
-puts list
+puts list.find(2)
