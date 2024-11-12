@@ -49,9 +49,11 @@ class LinkedList
   end
 
   def at(index)
+    return 'empty' if head.nil?
+
     temp = head
     1.upto(index) { temp = temp.next_node }
-    print "#{temp.value} \n"
+    temp
   end
 
   def pop
@@ -95,6 +97,16 @@ class LinkedList
     end
     index
   end
+
+  def insert_at(value, index)
+    append(value) if head.nil?
+
+    new_node = Node.new(value)
+    temp = at(index - 1)
+    new_node.next_node = temp.next_node
+    temp.next_node = new_node
+    self.size += 1
+  end
 end
 
 list = LinkedList.new
@@ -109,3 +121,6 @@ list.at(1)
 
 list.contains?(2)
 puts list.find(2)
+
+list.insert_at('hello', 1)
+puts list
