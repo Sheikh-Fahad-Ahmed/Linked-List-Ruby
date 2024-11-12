@@ -107,6 +107,18 @@ class LinkedList
     temp.next_node = new_node
     self.size += 1
   end
+
+  def remove_at(index)
+    pop if head.nil?
+
+    temp = at(index - 1)
+    prev = temp
+    temp = temp.next_node
+    prev.next_node = temp.next_node
+    temp.next_node = nil
+    puts temp.value
+    temp
+  end
 end
 
 list = LinkedList.new
@@ -123,4 +135,10 @@ list.contains?(2)
 puts list.find(2)
 
 list.insert_at('hello', 1)
+puts list
+
+list.insert_at('bye', 2)
+puts list
+
+list.remove_at(2)
 puts list
