@@ -120,25 +120,3 @@ class LinkedList
     temp
   end
 end
-
-list = LinkedList.new
-
-list.append(1)
-list.append(2)
-list.append(3)
-
-puts list
-
-list.at(1)
-
-list.contains?(2)
-puts list.find(2)
-
-list.insert_at('hello', 1)
-puts list
-
-list.insert_at('bye', 2)
-puts list
-
-list.remove_at(2)
-puts list
