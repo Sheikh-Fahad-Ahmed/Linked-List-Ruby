@@ -2,6 +2,7 @@
 
 require_relative 'node'
 
+# linked list of node with values
 class LinkedList
   attr_accessor :head, :tail, :size
 
